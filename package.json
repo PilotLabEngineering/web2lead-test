@@ -1,0 +1,42 @@
+{
+  "name": "lucent",
+  "version": "0.1.0",
+  "description": "Base starter project",
+  "scripts": {
+    "build": "webpack",
+    "build/watch": "npm run build -- --watch",
+    "serve": "http-server public -p 9999",
+    "start": "concurrently 'npm run build/watch' 'npm run serve'"
+  },
+  "engines": {
+    "node": ">= 8.2.0",
+    "npm": ">= 5.3.0"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Apostolos Christodoulou",
+    "email": "apo@pilotlab.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "concurrently": "^3.5.0",
+    "css-loader": "^0.28.4",
+    "html-webpack-plugin": "3.0.6",
+    "http-server": "0.11.1",
+    "postcss-color-function": "^4.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-each": "^0.10.0",
+    "postcss-import": "11.1.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-mixins": "^6.0.1",
+    "postcss-nesting": "^4.0.1",
+    "postcss-reporter": "^5.0.0",
+    "script-ext-html-webpack-plugin": "^2.0.0",
+    "style-loader": "0.20.3",
+    "webpack": "4.1.1",
+    "webpack-cli": "^2.0.11"
+  }
+}
