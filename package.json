@@ -1,7 +1,7 @@
 {
-  "name": "lucent",
+  "name": "web2lead",
   "version": "0.1.0",
-  "description": "Base starter project",
+  "description": "Web2Lead",
   "scripts": {
     "build": "webpack",
     "build/watch": "npm run build -- --watch",
