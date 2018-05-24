@@ -11,12 +11,19 @@ const first_name = document.getElementById("first_name");
 const last_name = document.getElementById("last_name");
 const email = document.getElementById("email");
 
-// Post Data
-const postData = (url, data) => {
-  //
-  console.log('Sending', data);
-  //
-  return fetch(url, {
+// Get Input Data
+const getInputData = () => ({
+  oid : oid.value,
+  retUrl : retUrl.value,
+  first_name : first_name.value,
+  last_name : last_name.value,
+  email : email.value,
+})
+
+// Async Submit
+asyncSubmitBtn.onclick = e => {
+  const data = getInputData();
+  fetch(webToLeadUrl, {
     body: JSON.stringify(data),
     cache: 'no-cache',
     headers: {
@@ -28,32 +35,27 @@ const postData = (url, data) => {
     mode: 'no-cors',
     redirect: 'follow',
     referrer: 'no-referrer',
-  });
-}
-
-
-// Get Input Data
-const getInputData = () => ({
-  oid : oid.value,
-  retUrl : retUrl.value,
-  first_name : first_name.value,
-  last_name : last_name.value,
-  email : email.value,
-})
-
-// Async Submit Button Click
-asyncSubmitBtn.onclick = e => {
-  const data = getInputData();
-  postData(webToLeadUrl, data)
+  })
     .then(res => console.log(res))
     .catch(error => console.error(error)
   );
 };
 
-// Proxy Submit Button Click
+// Proxy Submit
 proxySubmitBtn.onclick = e => {
   const data = getInputData();
-  postData(webToLeadProxyUrl, data)
+  fetch(webToLeadProxyUrl, {
+    body: JSON.stringify(data),
+    cache: 'no-cache',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      "Content-Type": "application/json"
+    },
+    method: 'POST',
+    redirect: 'follow',
+    referrer: 'no-referrer',
+  })
     .then(res => console.log(res))
     .catch(error => console.error(error)
   );
