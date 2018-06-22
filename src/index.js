@@ -29,10 +29,9 @@ asyncSubmitBtn.onclick = e => {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-      "Content-Type": "text/html"
+      "Content-Type": "application/json"
     },
     method: 'POST',
-    mode: 'no-cors',
     redirect: 'follow',
     referrer: 'no-referrer',
   })
