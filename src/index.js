@@ -1,7 +1,7 @@
 // Web To Lead Url
 const webToLeadUrl = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 const webToLeadProxyUrl = 'https://us-central1-gpp-salesforce-test.cloudfunctions.net/webToLead'
-
+//const webToLeadUrlCorProxy = 'https://cors.io/?u=https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8'
 // Get References to Inputs & Button
 const asyncSubmitBtn = document.getElementById("async_submit_btn");
 const proxySubmitBtn = document.getElementById("proxy_submit_btn");
@@ -23,13 +23,15 @@ const getInputData = () => ({
 // Async Submit
 asyncSubmitBtn.onclick = e => {
   const data = getInputData();
+ // fetch(webToLeadProxyUrl, {
   fetch(webToLeadUrl, {
     body: JSON.stringify(data),
     cache: 'no-cache',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-      "Content-Type": "application/json"
+      'Accept': 'application/json',
+    'Content-Type': 'application/json'
     },
     method: 'POST',
     redirect: 'follow',
@@ -43,7 +45,7 @@ asyncSubmitBtn.onclick = e => {
 // Proxy Submit
 proxySubmitBtn.onclick = e => {
   const data = getInputData();
-  fetch(webToLeadProxyUrl, {
+ fetch(webToLeadProxyUrl, {
     body: JSON.stringify(data),
     cache: 'no-cache',
     headers: {
