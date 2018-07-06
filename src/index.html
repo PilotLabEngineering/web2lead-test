@@ -10,26 +10,25 @@
         <section>
           <h3>Form POST</h3>
 
+          <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-  <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <input type=hidden id="oid" name="oid" value="00D3B000000DlJl">
+            <input type=hidden id="retUrl" name="retURL" value="https://gpp-salesforce-test.firebaseapp.com">
 
-  <input type=hidden id="oid" name="oid" value="00D3B000000DlJl">
-  <input type=hidden id="retUrl" name="retURL" value="https://gpp-salesforce-test.firebaseapp.com">
+            <input id="debug" type="hidden" name="debug" value=1>
+            <input id="debugEmail" type="hidden" name="debugEmail" value="apo@pilotlab.com">
 
-   <input type="hidden" name="debug" value=1>
-    <input type="hidden" name="debugEmail" value="tunde@pilotlab.com">
+            <label for="first_name">First Name</label>
+            <input id="first_name" maxlength="40" name="first_name" size="20" type="text"/><br>
 
+            <label for="last_name">Last Name</label>
+            <input id="last_name" maxlength="80" name="last_name" size="20" type="text"/><br>
 
-  <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text"/><br>
+            <label for="email">Email</label>
+            <input id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-  <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text"/><br>
-
-  <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-  <input type="submit" name="submit">
-
-  </form>
-
+            <input type="submit" name="submit">
+          </form>
 
         </section>
 
