@@ -10,8 +10,12 @@
         <section>
           <h3>Form POST</h3>
 
-          <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-
+          <form
+            method="POST"
+            id="salesform_form"
+            target="gpp_salesforce_iframe"
+            action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+          >
             <input type=hidden id="oid" name="oid" value="00D3B000000DlJl">
             <input type=hidden id="retUrl" name="retURL" value="https://gpp-salesforce-test.firebaseapp.com">
 
@@ -32,21 +36,14 @@
 
         </section>
 
-        <hr/>
-
-        <section>
-          <h3>Async Example</h3>
-          <button id="async_submit_btn">Click for fetch POST</button>
-        </section>
-
-        <hr/>
-
-        <section>
-          <h3>Proxy Example</h3>
-          <button id="proxy_submit_btn">Click for proxy POST</button>
-        </section>
       <article>
     </main>
+    <iframe
+      id="gpp_salesforce_iframe"
+      name="gpp_salesforce_iframe"
+      src="about:blank"
+      style="display: none;"
+    ></iframe>
   <script type="text/javascript" src="main.js"></script></body>
 </html>
 
